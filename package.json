@@ -1,0 +1,30 @@
+{
+  "name": "prom-nats-exporter",
+  "version": "1.0.0",
+  "description": "Prometheus Exporter for NATS Affiliate Tracking Software",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:buonzz-systems/prom-nats-exporter.git"
+  },
+  "keywords": [
+    "monitoring",
+    "kpi",
+    "alert",
+    "prometheus",
+    "grafana"
+  ],
+  "author": "buonzz@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "prom-client": "^11.1.1",
+    "request": "^2.88.0",
+    "winston": "^3.0.0"
+  }
+}

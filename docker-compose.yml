@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: "Dockerfile.local"
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - "7845:7845"
+  prom:
+    image: prom/prometheus:v2.4.3
+    volumes:
+     - ./docker/prometheus.yml:/etc/prometheus/prometheus.yml
+    command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
+    ports:
+     - 9090:9090
+  grafana:
+    image: grafana/grafana
+    ports:
+     - "3000:3000"
+    depends_on:
+      - prom
